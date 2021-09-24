@@ -4,7 +4,9 @@
   "description": "This is a mock Library created to practice Node and Express",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "DEBUG=app nodemon app.js",
+    "lint": "eslint app.js"
   },
   "repository": {
     "type": "git",
@@ -17,9 +19,29 @@
   },
   "homepage": "https://github.com/themeadeconcept/mock-library#readme",
   "dependencies": {
+    "bootstrap": "5.1.1",
     "chalk": "4.1.2",
     "debug": "4.3.2",
     "express": "4.17.1",
-    "morgan": "1.10.0"
+    "jquery": "3.6.0",
+    "morgan": "1.10.0",
+    "nodemon": "2.0.13",
+    "pug": "3.0.2"
+  },
+  "devDependencies": {
+    "eslint": "7.32.0",
+    "eslint-config-airbnb-base": "14.2.1",
+    "eslint-plugin-import": "2.24.2"
+  },
+  "nodemonConfig": {
+    "startable": "rs",
+    "ignore": [
+      "node_modules/**/node_modules"
+    ],
+    "delay": "2500",
+    "env": {
+      "NODE_ENV": "development",
+      "PORT": 4000
+    }
   }
 }
